@@ -89,7 +89,9 @@ void janela(int x, int y)
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleScreenBufferSize(hConsole, outbuff);
 	Sleep(130);
-	SMALL_RECT windowSize = {0, 0, x-1, y-1};
+	x--;
+	y--;
+	SMALL_RECT windowSize = {(short)0, (short)0, (short)x, (short)y};
 	SetConsoleWindowInfo(hConsole, TRUE, &windowSize);
 }
 
@@ -154,8 +156,10 @@ int setPlayer(int player, COLUNA a[], COLUNA b[], COLUNA c[])
 	b[5].cond=0;
 	c[7].cond=0;
 			
-	if(player==0) return 1;
-	if(player==1) return 0;
+	if(player==0){
+		return 1;
+	} 
+	return 0;
 }
 
 void inicializaColuna(COLUNA c[], int tam)
@@ -413,6 +417,7 @@ int caixaDialogo(int a, int b)
 			}
 		break;
 	}
+	return 0;
 }
 
 int verificaSelecionados(COLUNA a[], COLUNA b[], COLUNA c[])
