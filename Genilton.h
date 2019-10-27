@@ -111,7 +111,7 @@ void esperar(int segundos)
 void seta(int x, int y)
 {
 	gotoxy(x,y);
-	printf("%c",30);
+	printf("^");
 }
 
 void selecionaPalito (COLUNA v[], int pos, int ult)
@@ -229,7 +229,7 @@ void desenhaColunas(COLUNA a[], COLUNA b[], COLUNA c[])
 	cortexto(113); 
 	
 	gotoxy(10,31);
-	printf(" [ Espaco ] Seleciona      [ Enter ] Exclui        %c  %c  %c ",17, 197,16);
+	printf(" [ Espaco ] Seleciona      [ Enter ] Exclui        <-  %c  -> ", 197);
 }
 
 int verificaVencedor(COLUNA a[], COLUNA b[], COLUNA c[])
